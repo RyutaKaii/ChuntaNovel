@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chunta Novel ver1.0</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+        <!--
+            body {margin: 10px;background-color: peachpuff;}
+            p {padding: 20px;}
+            h2 {background-color: skyblue;padding: 10px;}
+        -->
+        </style>
+    </head>
+
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+
+        <h1>Chunta Novel ver1.0</h1>
+        <p>こんにちは。<br />
+            このページはChunta Novelのマニュアルのページです。</p>
+        
+        <h2>Chunta Novelとは</h2>
+        <p>簡単にhtml版のノベルが作成できるフレームワークです。<br />
+            画像と文章があるけど、ホームページに載せるやり方がわからない。<br />
+            いろいろなツールを使ってみたけど、どうもよくわからない。<br />
+            そんな人にはもってこいのフレームワークです。<br />
+            とっかかりやすさ・分かりやすさ・作りやすさにこだわってみました。</p>
+        
+        <h2>もくじ</h2>
+        <ul>
+            <li>ファイルを準備する</li>
+            <li>文章を書く</li>
+            <li>画像を作る</li>
+            <li>カットイン画像を作る</li>
+            <li>音楽を再生する</li>
+            <li>カスタマイズしてみる</li>
+            <li>困ったときは</li>
+        </ul>
+        
+        <h2>ファイルを準備する</h2>
+        <p>
+            まずはファイルをダウンロードしてください。<br />
+            ダウンロードしたら、展開してください。<br />
+            以上です。
+        </p>
+        
+        <h2>文章を書く</h2>
+        <p>
+            まずは文章を書いてみましょう。<br />
+            下記のファイルを開いてください。
+        </p>
+            <pre>ChuntaNovel\src\org\novel\chunta\txt\sinario.txt</pre>
+        <p>
+            文章を書いてください。<br />
+            ページの区切りには"[n]"をつけてください。<br />
+            下記のような感じです。
+        </p>
+            <pre>こんにちは。
+はじめまして。[n]
+わたしはちゅんたです。[n]
+ようこそ。</pre>
+        <p>
+            以上です。<br />
+            たったこれだけです。<br />
+            日本語が文字化けしてしまう人は、テキストをutf-8で保存してください。<br />
+            メモ帳であれば、ファイル→名前を付けて保存で、保存するときに文字コードを選択できるはずです。
+        </p>
+        
+        <h2>画像を作る</h2>
+        <p>
+            画像を作ってください。<br />
+            気を付けてほしいことは、縦横比です。<br />
+            当たり前ですが、縦が長い画像を使うと縦長の画面になりますし、横が長い画像を使うと横長の画面になります。<br />
+            画像を作ったら、下記のフォルダに格納してください。
+        </p>
+        <pre>ChuntaNovel\src\org\novel\chunta\img</pre>
+            
+        <p>
+            次に、画像を表示したい場所に、下記のように書いてください。<br />
+            下記の例は"1.jpg"を作成した例です。
+        </p>
+            <pre>[i]../img/1.jpg[n]</pre>
+        <p>
+            これで文章と画像が作成できました。<br />
+            下記は一例です。
+        </p>
+            <pre>こんにちは。
+はじめまして。[n]
+[i]../img/1.jpg[n]
+わたしはちゅんたです。[n]
+ようこそ。</pre>
+        
+        <h2>カットイン画像を作る</h2>
+        <p>
+            カットイン画像を表示したい場所に、下記のように書いてください。<br />
+            下記の例は"1.jpg"を作成した例です。
+        </p>
+            <pre>[c]../img/1.jpg[n]</pre>
+        <p>
+            カットイン時間だけ、画像が表示されます。<br />
+            下記は一例です。
+        </p>
+            <pre>こんにちは。
+はじめまして。[n]
+[c]../img/1.jpg[n]
+わたしはちゅんたです。[n]
+ようこそ。</pre>
+
+        <h2>音楽を再生する</h2>
+        <p>
+            音楽を再生したい場所に、下記のように書いてください。<br />
+            下記の例は"sample.mp3"を作成した例です。
+        </p>
+            <pre>[a]../audio/sample.mp3[n]</pre>
+        <p>
+            下記は一例です。
+        </p>
+            <pre>こんにちは。
+はじめまして。[n]
+[c]../img/1.jpg[n]
+わたしはちゅんたです。[n]
+[s]../audio/sample.mp3[n]
+ようこそ。</pre>
+        
+        <h2>カスタマイズしてみる</h2>
+        <p>
+            実はここまでで動きます。<br />
+            ですが、少し画面をカスタマイズしてみましょう。<br />
+            下記の設定ファイルを開いてください。
+        </p>
+        <pre>ChuntaNovel\src\org\novel\chunta\js\main.js</pre>
+        <p>
+            一番上の設定値の値を変更すると画面をカスタマイズできます。<br />
+            説明は不要だと思います。<br />
+            タイトル・横幅は変更することをおすすめします。
+        </p>
+        
+        <h2>困ったときは</h2>
+        <p>
+            ローカル環境だとそのままのChromeでは実行できません。<br />
+            Chromeの設定を変更する必要があります。<br />
+            詳細は<a href="http://qiita.com/nissuk/items/1ede2953a8661dc59214" target="_blank">ここ</a>に書いてありました。<br />
+            問題が起こった場合、たいていはsinario.txtの誤りです。<br />
+            改行の記号"[n]"の付け忘れはありませんか？<br />
+            画像のファイル名は間違っていませんか？<br />
+            勝手にmain.jsの中身を変えてしまっていませんか？
+        </p>
+    </body>
+</html>
